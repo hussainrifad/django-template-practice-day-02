@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} menu list {% endblock %}
+
+{% block content %}
+    <!-- html code  -->
+    <div>
+        <h4 class="text-danger fw-bold font-monospace text-center">All meals</h4>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 my-5">
+            {% for meal in meals %}
+                <div class="col">
+                    <div class="card" style="max-width: 16rem;">
+                        <img src= {{ meal.strMealThumb }} class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title fs-6 font-monospace fw-bolder">{{ meal.strMeal }}</h5>
+                        <p class="card-text fs-6 font-monospace text-danger">{{ meal.idMeal }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
